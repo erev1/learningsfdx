@@ -1,0 +1,33 @@
+<apex:page sidebar="false" showHeader="false">
+<apex:pageBlock >
+<br/>
+<br/>
+<apex:toolbar >
+    <apex:outputText value="eneida's toolbar"></apex:outputText>
+    <apex:toolbarGroup itemSeparator="square" id="theToolBarLinks">
+        <apex:outputLink value="https://www.google.com">Google</apex:outputLink>
+        <apex:outputLink value="https://www.salesforce.com">Salesforce</apex:outputLink>
+    </apex:toolbarGroup>
+    <apex:toolbarGroup itemSeparator="line" location="right">
+        <apex:form >
+            <apex:inputText id="theinputtext">Enter text</apex:inputText>
+        </apex:form>
+    </apex:toolbarGroup>
+</apex:toolbar>
+<apex:panelBar >
+<apex:panelBarItem label="item">
+    <apex:form >
+   
+        <h1>
+            Please fill the below details
+        </h1><br/><br/>
+        <apex:outputLabel value="Enter Name:" for="name"></apex:outputLabel> <apex:inputText id="name"/><br/><br/>
+       <apex:outputLabel value="Enter Age:" for="age"></apex:outputLabel><apex:inputText id="age"/><br/><br/>
+       <apex:outputLink value="https://wwww.google.com">go to google</apex:outputLink>
+    </apex:form>
+    </apex:panelBarItem>
+    <apex:panelBarItem label="item2" onenter="alert('entering item 2')">item2</apex:panelBarItem>
+    </apex:panelBar>
+    <br/><br/>
+</apex:pageBlock>
+</apex:page>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <div slot="title" class="slds-text-title_bold">
+            Today's Clinic Follow Ups
+        </div>
+        <ul>
+            <template if:true={responseReceived}>
+                <template for:each={followUps.data} for:item="followUp">
+                    <li key={followUp.id}>
+                        <div class="slds-p-around_medium">
+                            <lightning-tile label={followUp.Name}>
+                                <p class="slds-truncate" title={followUp.Next_Follow_Up_Date__c}>Follow Up Date: {followUp.Next_Follow_Up_Date__c}</p>
+                            </lightning-tile>
+                            <lightning-tile label={followUp.Notes}>
+                                <p class="slds-line-clamp_x-small" title={followUp.Notes__c}>Notes: {followUp.Notes__c}</p>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

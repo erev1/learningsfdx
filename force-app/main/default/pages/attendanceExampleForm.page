@@ -1,0 +1,75 @@
+<apex:page standardController="Program_Attendance__c" extensions="FrontDeskRegistration" showHeader="false" sidebar="false">
+
+
+
+    <style type="text/css">
+
+        p { 
+        font-weight: bold;
+        margin-top: 100px;
+        font-size: 20px;
+         }
+
+    </style>
+
+
+<center>
+    <apex:pageBlock rendered="{!topBarVis}">
+        
+        <p>Welcome to YouthUprising</p><br/><br/>
+        
+        <apex:form >
+        <apex:commandButton value="I have a Youth ID" action="{!showYouthForm}"/>
+        
+        <apex:commandButton value="I am a guest" action="{!showGuestForm}"/>
+        </apex:form>
+        
+    </apex:pageBlock>
+
+    <apex:form rendered="{!youthFormVis}" >
+
+        <apex:pageBlock title="Registration Form - Youth" mode="edit" >
+            <apex:pageBlockSection columns="1">
+               
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Youth ID</apex:outputLabel><apex:inputText value="{!youthID}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!programA.YouthID__c}"/>
+                    
+                        <apex:inputField value="{!programA.Name__c}"/>
+               
+                    
+               
+            </apex:pageBlockSection>
+            <apex:commandButton value="submit" action="{!submit}"/>
+
+        </apex:pageBlock>
+
+     </apex:form>
+     
+     <apex:form rendered="{!guestFormVis}">
+        <apex:pageBlock title="Registration Form - Guest" mode="edit" >
+            <apex:pageBlockSection columns="1">
+               
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >Name</apex:outputLabel><apex:inputText value="{!name}"/>
+                    </apex:pageBlockSectionItem>
+               
+            </apex:pageBlockSection>
+            <apex:commandButton value="submit" action="{!submit}"/>
+        </apex:pageBlock>
+     
+     
+     </apex:form>
+     <apex:pageBlock rendered="{!successMessageVis}">
+         <apex:pageBlockSection columns="1" >
+            <apex:outputText >Thanks {!personName} You've been registered</apex:outputText>
+            <br/>
+            <br/>
+            <apex:pageBlockSectionItem >
+                <apex:outputLink value="https://eneidaliveagent-developer-edition.na124.force.com/attendanceExampleForm/">Register Another Person</apex:outputLink>
+            </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+     </apex:pageBlock>
+ </center>
+</apex:page>

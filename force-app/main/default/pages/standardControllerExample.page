@@ -1,0 +1,18 @@
+<apex:page standardController="Account">
+<apex:form >
+    <apex:pageBlock title="My content" mode="edit">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Saveeee" action="{!save}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="my content secction" columns="4">
+            <apex:inputField value="{!account.name}"/>
+            <apex:inputField value="{!account.Site}"/>
+            <apex:inputField value="{!account.Type}"/>
+
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:form>
+    
+    <apex:detail relatedList="false" />
+</apex:page>

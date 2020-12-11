@@ -1,0 +1,35 @@
+<apex:page standardController="Contact" docType="html-5.0" sidebar="false" standardStyleSheets="false">
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous" />
+    </head>
+
+    <div class="container">
+        <apex:pageBlock >
+            <div class="jumbotron" style="background-color: #2c113e">
+                <h1 class="text-center display-3" style="color: white">Hello World!</h1>
+            </div>
+        </apex:pageBlock>
+        <div class="container m-4">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm">
+                    <apex:form styleClass="form-group d-flex justify-content-center">
+                        <apex:pageBlock mode="edit">
+                            <div class="d-flex justify-content-center">
+                                <h4>Create A New Contact</h4>
+                            </div>
+                            <apex:pageBlockSection columns="1">
+                                <apex:inputField styleClass="form-control m-2" value="{!contact.FirstName}" html-placeholder="First Name" />
+                                <apex:inputField styleClass="form-control m-2" value="{!contact.LastName}" html-placeholder="Last Name" />
+                                <apex:inputField styleClass="form-control m-2" value="{!contact.Email}" html-placeholder="Email" />
+                                <apex:inputField styleClass="form-control m-2" value="{!contact.Phone}" html-placeholder="Phone" />
+                            </apex:pageBlockSection>
+                            <apex:commandButton styleClass="btn btn-primary form-control m-2" style="background-color: #9773d9; outline: none; border:none" value="Save" action="{!save}" />
+                        </apex:pageBlock>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>
